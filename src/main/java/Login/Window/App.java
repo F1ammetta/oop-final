@@ -22,6 +22,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("login"), 640, 480);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.setTitle("Login");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
         stage.show();
