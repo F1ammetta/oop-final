@@ -40,18 +40,11 @@ public class Login {
     @FXML
     void keypress(KeyEvent event) {
         // if (event.getCode().toString().equals("ENTER"));
-        // log(null);
     }
 
     @FXML
     void log(MouseEvent event) {
-        // Log log = new Log();
-        // try {
-        //     log.load();
-        // } catch (Exception e) {
-        //     // TODO: handle exception
-        // }
-
+        
     }
 
 }
