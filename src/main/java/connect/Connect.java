@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 
 public class Connect { 
     public Connection connect(){ 
-        String url= "jdbc:sqlite:C:/SQLite/db1.db";
+        String url= "jdbc:sqlite:db1.db";
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
