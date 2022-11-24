@@ -6,8 +6,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 
 public class Query {
-    public static String request(){
-        String query = "SELECT campo1,campo2,… FROM Tabla WHERE condicion";
+    public static String request(String table){
+        String query = "SELECT * FROM "+table;
         String obj = "";
         Connect ocon = new Connect();
         try (Connection con = ocon.connect(); Statement st = con.createStatement()){
