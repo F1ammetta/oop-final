@@ -8,9 +8,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-
-import connect.Connect;
 
 
 
@@ -28,8 +25,6 @@ public class App extends Application {
         stage.setResizable(false);
         stage.setTitle("Login");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
-        Connect con = new Connect();
-        Connection conn = con.connect();
         stage.show();
     }
 
