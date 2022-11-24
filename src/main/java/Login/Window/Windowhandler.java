@@ -11,7 +11,7 @@ public class Windowhandler {
     
     public void load(String window) throws IOException{
         Stage stage = new Stage();
-        FXMLLoader fxmlloader = new FXMLLoader(App.class.getResource(window+".fxml"));
+        FXMLLoader fxmlloader = new FXMLLoader(Main.class.getResource(window+".fxml"));
         Scene scene = new Scene(fxmlloader.load(), 640, 480);
         stage.setScene(scene);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));

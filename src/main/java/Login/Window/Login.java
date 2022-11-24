@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -30,6 +31,12 @@ public class Login {
 
     @FXML
     private Text label;
+
+    @FXML
+    private Label user_error;
+
+    @FXML
+    private Label pass_error;
 
     @FXML
     private Hyperlink register;
@@ -64,15 +71,21 @@ public class Login {
             else passs.add(temp[i].replace("passwd: ", ""));
         }
         if (users.contains(user.getText())){
+            user_error.setOpacity(0);
             if (pass.getText().equals(passs.get(users.indexOf(user.getText())))){
-                System.out.println("Welcome");
+                try{
+                    Stage stage = (Stage) register.getScene().getWindow();
+                    stage.close();
+                    Windowhandler windowhandler = new Windowhandler();
+                    windowhandler.load("app");
+                }catch(Exception e){}
             }
             else{
-                // TODO: HANDLE WRONG PASSWORD
+                pass_error.setOpacity(1);
             }
         }
         else{
-            // TODO: HANDLE MISSING USERNAME
+            user_error.setOpacity(1);
         }
     }
 
@@ -83,9 +96,7 @@ public class Login {
             stage.close();
             Windowhandler windowhandler = new Windowhandler();
             windowhandler.load("register");
-        } catch (Exception e) {
-
-        }
+        } catch (Exception e) {}
     }
 
 }
