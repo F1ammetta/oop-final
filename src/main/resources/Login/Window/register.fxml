@@ -16,6 +16,8 @@
          </font>
       </Label>
       <TextField fx:id="user" layoutX="272.0" layoutY="167.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;" />
+      <PasswordField fx:id="pass1" layoutX="273.0" layoutY="216.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;" />
+      <PasswordField fx:id="pass2" layoutX="273.0" layoutY="266.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;" />
       <Label layoutX="172.0" layoutY="167.0" prefHeight="26.0" prefWidth="78.0" text="Username" textFill="WHITE">
          <font>
             <Font size="17.0" />
@@ -34,18 +36,6 @@
       <Button fx:id="RegisterButton" layoutX="253.0" layoutY="321.0" mnemonicParsing="false" onAction="#Write" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #444444;" text="Register" textFill="WHITE" />
       <Button fx:id="ClearButton" layoutX="378.0" layoutY="321.0" mnemonicParsing="false" onAction="#clear" style="-fx-background-color: #444444;" text="Clear" textFill="WHITE" />
       <Label fx:id="user_error" layoutX="437.0" layoutY="159.0" opacity="0.0" prefHeight="42.0" prefWidth="163.0" text="*Please enter a username        (do not exceed 20 characters)" textFill="#ff9700" wrapText="true" />
-      <Label layoutX="446.0" layoutY="215.0" prefHeight="26.0" prefWidth="78.0" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <Label layoutX="446.0" layoutY="265.0" prefHeight="26.0" prefWidth="78.0" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
       <Label fx:id="passwd_error" layoutX="437.0" layoutY="266.0" opacity="0.0" prefHeight="25.0" prefWidth="163.0" text="*Passwords do not match" textFill="#ff9700" wrapText="true" />
-      <PasswordField fx:id="pass2" layoutX="273.0" layoutY="266.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;" />
-      <PasswordField fx:id="pass1" layoutX="273.0" layoutY="216.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;" />
    </children>
 </AnchorPane>
