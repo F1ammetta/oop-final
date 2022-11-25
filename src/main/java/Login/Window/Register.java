@@ -4,9 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import connect.Query;
 
 public class Register {
@@ -27,7 +30,13 @@ public class Register {
     private PasswordField pass2;
 
     @FXML
+    private Hyperlink login;
+    
+    @FXML
     private Label passwd_error;
+
+    @FXML
+    private Label success;
 
     @FXML
     private TextField user;
@@ -46,13 +55,38 @@ public class Register {
             return;
         }
         Query.insert(user.getText(), pass1.getText());
+        success.setOpacity(1);
+        passwd_error.setOpacity(0);
+        user_error.setOpacity(0);
     }
+
+    @FXML
+    void login(ActionEvent event){
+        try {
+            Stage stage = (Stage) login.getScene().getWindow();
+            stage.close();
+            Windowhandler windowhandler = new Windowhandler();
+            windowhandler.load("login");
+        } catch (Exception e) {}
+    }    
 
     @FXML
     void clear(ActionEvent event) {
         user.setText(null);
         pass1.setText(null);
         pass2.setText(null);
+    }
+
+    @FXML
+    void type(KeyEvent event) {
+        success.setOpacity(0);;
+    }
+
+    @FXML
+    void enter(KeyEvent event) {
+        if (event.getCode().toString().equals("ENTER")){
+            Write(null);
+        };
     }
 
 }

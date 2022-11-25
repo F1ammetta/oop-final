@@ -2,43 +2,71 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="Window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keypress" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.Window.Login">
    <children>
-      <Text fx:id="label" fill="WHITE" layoutX="206.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log In" wrappingWidth="188.7294921875">
+      <Text fx:id="label" fill="WHITE" layoutX="180.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log In" wrappingWidth="240.7294921875">
          <font>
-            <Font name="Likhan" size="66.0" />
+            <Font name="Monospaced Regular" size="66.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="148.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-      <Text fill="WHITE" layoutX="150.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-      <TextField fx:id="user" layoutX="244.0" layoutY="179.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;">
+      <Text fill="WHITE" layoutX="148.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="150.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font></Text>
+      <TextField fx:id="user" layoutX="244.0" layoutY="179.0" prefHeight="23.0" prefWidth="200.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;">
          <cursor>
             <Cursor fx:constant="TEXT" />
-         </cursor></TextField>
-      <PasswordField fx:id="pass" layoutX="244.0" layoutY="226.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;">
+         </cursor>
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font></TextField>
+      <PasswordField fx:id="pass" layoutX="244.0" layoutY="226.0" prefHeight="23.0" prefWidth="200.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
          <opaqueInsets>
             <Insets />
-         </opaqueInsets></PasswordField>
-      <Button fx:id="login" layoutX="250.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#log" prefHeight="24.0" prefWidth="100.0" style="-fx-background-color: #444444;" text="Log In" textFill="WHITE" />
-      <Button fx:id="ClearButton" layoutX="462.0" layoutY="293.0" mnemonicParsing="false" onAction="#clear" style="-fx-background-color: #444444;" text="Clear" textFill="WHITE" />
-      <Hyperlink fx:id="register" layoutX="216.0" layoutY="328.0" onAction="#register" text="Don't have an account? Register" underline="true">
+         </opaqueInsets>
          <font>
-            <Font name="System Italic" size="12.0" />
+            <Font name="Monospaced Regular" size="12.0" />
+         </font></PasswordField>
+      <Button fx:id="login" layoutX="269.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#log" prefHeight="24.0" prefWidth="100.0" style="-fx-background-color: #444444;" text="Log In" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font></Button>
+      <Button fx:id="ClearButton" layoutX="462.0" layoutY="293.0" mnemonicParsing="false" onAction="#clear" style="-fx-background-color: #444444;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font></Button>
+      <Hyperlink fx:id="register" layoutX="203.0" layoutY="329.0" onAction="#register" text="Don't have an account? Register" underline="true">
+         <font>
+            <Font name="Monospaced Italic" size="12.0" />
          </font>
       </Hyperlink>
-      <Label fx:id="user_error" layoutX="424.0" layoutY="171.0" opacity="0.0" prefHeight="42.0" prefWidth="163.0" text="* Invalid username" textFill="#ff9700" wrapText="true" />
+      <Group fx:id="user_error" layoutX="424.0" layoutY="171.0" opacity="0.0">
+         <children>
+            <Label prefHeight="42.0" prefWidth="163.0" text="* Invalid username" textFill="#ff9700" wrapText="true" />
+            <CubicCurve controlX1="190.0" controlX2="214.0" controlY1="90.0" controlY2="-63.0" endX="124.0" endY="-63.0" fill="#ffffff00" layoutX="-13.0" layoutY="83.0" startX="36.2735595703125" startY="85.87908935546875" stroke="#ff9700" strokeWidth="3.0" />
+            <Line endX="33.5" endY="41.5" layoutX="9.0" layoutY="118.0" startX="12.23388671875" startY="49.5" stroke="#ff9700" strokeWidth="3.0" />
+            <Line endX="-18.0" endY="-13.0" layoutX="61.0" layoutY="193.0" startX="-42.0" startY="-24.878692626953125" stroke="#ff9700" strokeWidth="3.0" />
+         </children>
+      </Group>
       <Label fx:id="pass_error" layoutX="424.0" layoutY="209.0" opacity="0.0" prefHeight="42.0" prefWidth="163.0" text="* Incorrect password" textFill="#ff9700" wrapText="true" />
    </children>
 </AnchorPane>
