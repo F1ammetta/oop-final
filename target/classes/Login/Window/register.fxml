@@ -15,15 +15,15 @@
             <Font name="Monospaced Regular" size="66.0" />
          </font>
       </Label>
-      <TextField fx:id="user" layoutX="272.0" layoutY="167.0" onKeyTyped="#type" prefHeight="23.0" prefWidth="172.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;">
+      <TextField fx:id="user" layoutX="250.0" layoutY="166.0" onKeyTyped="#type" prefHeight="23.0" prefWidth="172.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;">
          <font>
             <Font name="Monospaced Regular" size="12.0" />
          </font></TextField>
-      <PasswordField fx:id="pass1" layoutX="273.0" layoutY="216.0" prefHeight="23.0" prefWidth="172.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;">
+      <PasswordField fx:id="pass1" layoutX="251.0" layoutY="215.0" prefHeight="23.0" prefWidth="172.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;">
          <font>
             <Font name="Monospaced Regular" size="12.0" />
          </font></PasswordField>
-      <PasswordField fx:id="pass2" layoutX="273.0" layoutY="266.0" prefHeight="23.0" prefWidth="172.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;">
+      <PasswordField fx:id="pass2" layoutX="251.0" layoutY="265.0" prefHeight="23.0" prefWidth="172.0" style="-fx-background-color: #444444; -fx-text-fill: #ffffff;">
          <font>
             <Font name="Monospaced Regular" size="12.0" />
          </font></PasswordField>
@@ -50,7 +50,7 @@
          <font>
             <Font name="Monospaced Regular" size="12.0" />
          </font></Button>
-      <Label fx:id="user_error" layoutX="428.0" layoutY="149.0" opacity="0.0" prefHeight="52.0" prefWidth="172.0" text="* Please enter a username (do not exceed 20 characters)" textFill="#ff9700" wrapText="true">
+      <Label fx:id="user_error" layoutX="428.0" layoutY="149.0" opacity="0.0" prefHeight="52.0" prefWidth="172.0" text="* Please enter a valid username (do not exceed 20 characters)" textFill="#ff9700" wrapText="true">
          <font>
             <Font name="Monospaced Regular" size="12.0" />
          </font></Label>
@@ -64,6 +64,11 @@
          </font>
       </Hyperlink>
       <Label fx:id="success" layoutX="57.0" layoutY="316.0" opacity="0.0" prefHeight="35.0" prefWidth="182.0" text="You have been registered succsessfully" textAlignment="CENTER" textFill="#2596be" wrapText="true">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="user_dupp_error" layoutX="427.0" layoutY="149.0" opacity="0.0" prefHeight="52.0" prefWidth="172.0" text="* That username has already been taken" textFill="#ff9700" wrapText="true">
          <font>
             <Font name="Monospaced Regular" size="12.0" />
          </font>

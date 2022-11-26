@@ -45,19 +45,42 @@ public class Register {
     private Label user_error;
 
     @FXML
+    private Label user_dupp_error;
+
+    @FXML
     void Write(ActionEvent event) {
-        if (user.getText().equals("")){
+        if (user.getText().equals("")) {
             user_error.setOpacity(1);
+            passwd_error.setOpacity(0);
+            user_dupp_error.setOpacity(0);
             return;
         }
-        if (!(pass1.getText().equals(pass2.getText())) || pass1.getText().equals("")){
+        if (!(pass1.getText().equals(pass2.getText())) || pass1.getText().equals("")) {
             passwd_error.setOpacity(1);
+            user_error.setOpacity(0);
+            user_dupp_error.setOpacity(0);
             return;
         }
-        Query.insert(user.getText(), pass1.getText());
-        success.setOpacity(1);
-        passwd_error.setOpacity(0);
-        user_error.setOpacity(0);
+        
+        try {
+            Query.insert(user.getText(), pass1.getText());
+            success.setOpacity(1);
+            passwd_error.setOpacity(0);
+            user_error.setOpacity(0);
+            user_dupp_error.setOpacity(0);
+        }catch (Exception e){
+            if (e.getMessage().contains("PRIMARY KEY")) {
+                user_dupp_error.setOpacity(1);
+                user_error.setOpacity(0);
+                passwd_error.setOpacity(0);
+            }
+            else if (e.getMessage().contains("LENGTH")) {
+                user_error.setOpacity(1);
+                passwd_error.setOpacity(0);
+                user_dupp_error.setOpacity(0);
+            }
+        }
+
     }
 
     @FXML

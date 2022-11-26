@@ -135,7 +135,7 @@ public class Appl {
                 if (isrange("INSUFICIENT", related.get(i))) vectors.get(j).set(2, vectors.get(j).get(2) + 1);
                 if (isrange("REGULAR", related.get(i))) vectors.get(j).set(3, vectors.get(j).get(3) + 1);
                 if (isrange("OUTSTANDING", related.get(i))) vectors.get(j).set(4, vectors.get(j).get(4) + 1);
-                if (isrange("EXCELENT", related.get(i))) vectors.get(j).set(5, vectors.get(j).get(5) + 1);
+                if (isrange("EXCELLENT", related.get(i))) vectors.get(j).set(5, vectors.get(j).get(5) + 1);
             }
             for (int i = 0; i < 6; i++){
                 vectors.get(j).set(i, vectors.get(j).get(i)/ids.size());

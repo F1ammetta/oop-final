@@ -26,14 +26,11 @@ public class Query {
         return obj;
     }
 
-    public static void insert(String username, String password){
+    public static void insert(String username, String password) throws Exception{
         String query = "INSERT INTO users(username, passwd) VALUES('"+username+"','"+password+"');";
         Connect ocon = new Connect();
-        try (Connection con = ocon.connect(); Statement st = con.createStatement()){
-            st.executeUpdate(query);
-        }catch (SQLException e) {
-            System.out.println("Error: "+e.getMessage());
-        }
+        Connection con = ocon.connect(); Statement st = con.createStatement();
+        st.executeUpdate(query);
     }
 
     public static void insert(int id, String name, char gender, float inf, float phys, float che){
