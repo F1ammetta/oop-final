@@ -18,7 +18,7 @@ import java.util.Formatter;
 
 import connect.Query;
 
-public class Appl {
+public class App {
 
     @FXML
     private Button AddButton;
